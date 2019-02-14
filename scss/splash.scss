@@ -1,0 +1,114 @@
+@import 'colours';
+
+#splash {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    #splash-background {
+      background-image: url(/assets/outside2.jpg);
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      z-index: 1;
+      background-blend-mode: darken;
+      background-repeat: no-repeat;
+      background-color: grey;
+      background-size: cover;
+      opacity: 0.85;
+    }
+    .animatedBorder {
+      z-index: 2;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+    .animatedBorder:before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      width: 0;
+      height: 0;
+      background: transparent;
+      border: 5px solid transparent;
+    }
+    .animatedBorder:hover:before {
+      animation: animate 1s linear forwards;
+    }
+    @keyframes animate {
+      0% {
+        width: 0;
+        height: 0;
+        border-top-color: orange;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+      }
+      50% {
+        width: 100%;
+        height: 0;
+        border-top-color: orange;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+      }
+      100% {
+        width: 100%;
+        height: 100%;
+        border-top-color: orange;
+        border-right-color: orange;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+      }
+    }
+    .animatedBorder:after {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      width: 0;
+      height: 0;
+      background: transparent;
+      border: 5px solid transparent;
+    }
+    .animatedBorder:hover:after {
+      animation: animate2 1s linear forwards;
+    }
+    @keyframes animate2 {
+      0% {
+        width: 0;
+        height: 0;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: orange;
+      }
+      50% {
+        width: 0;
+        height: 100%;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: orange;
+        border-left-color: orange;
+      }
+      100% {
+        width: 100%;
+        height: 100%;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: orange;
+        border-left-color: orange;
+      }
+    }
+    img {
+      z-index: 2;
+      position: relative;
+      @media screen and (min-width: $big) {
+        width: 50%;
+      }
+    }
+    
+}

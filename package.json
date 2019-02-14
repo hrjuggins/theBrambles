@@ -1,0 +1,26 @@
+{
+  "name": "dad-airbnb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "create-react-app": "^2.1.4",
+    "dotenv": "^6.2.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "googleapis": "^27.0.0",
+    "nodemailer": "^5.1.1"
+  },
+  "devDependencies": {
+    "node-sass": "^4.11.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass scss -o public/css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\" ",
+    "start": "concurrently \"node server.js\" \"npm run watch-css\" "
+  },
+  "author": "",
+  "license": "ISC"
+}

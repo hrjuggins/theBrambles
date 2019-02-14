@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Brambles</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300|Merriweather' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <nav id="nav" class="nav-closed">
+      <div id="nav-left">
+        <h2></h2>
+        <h3>ROOM</h3>
+        <h3>AREA</h3>
+      </div>
+      <div id="img-container"><img src="./assets/logo-blank-white.png" alt="outside" id="logo" /></div>
+      <div id="nav-right">
+      <h3>PHOTOS</h3>
+      <h3>CONTACT</h3>
+          <!---<a href="/book"><button id="nav-button">BOOK NOW</button></a>-->
+          <div id="menu-button">
+            <p>MENU</p>
+            <div id="nav-menu">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+            </div>
+        </div>
+      </div>
+    </nav>
+    <main id="main-page">
+      <div id="menu-expand" class="closed">
+        <div>
+          <h2>The Room</h2>
+          <h2>The Area</h2>
+          <h2>Photos</h2>
+          <h2>Contact</h2>
+        </div>
+      </div>
+      <div id="background"></div>
+        <section id="splash" >
+          <div id="splash-background"></div>
+          <div class="animatedBorder" ><img src="./assets/logo-no-border.png" alt="outside" /></div>
+        </section>
+        <section id="intro">
+          <h1>WELCOME TO THE BRAMBLES</h1>
+          <img src="./assets/bramble.png" alt="bramble" />
+          <p>The Brambles is a cozy Self contained accommodation in a quiet secluded location deep in the heart of the Peak District. </p>
+        </section>
+        <section id="info">
+          <article>
+            <img src="./assets/inside1.jpg" alt="inside" />
+            <div>
+              <h2>THE SPACE</h2>
+              <p>Although The Brambles is an extension of our property you will have your own access to come and go as you please. The key is accessed via a safebox. There is ample parking for guests. You will have the added bonus of a kitchenette with a fridge, microwave, toaster, kettle and washing machine. A bright airy modern en-suite shower and toilet. All bedding and towels provided. The bedroom can be made up as a double or twin room.</p>  
+            </div>
+          </article>
+          <article>
+            <img src="./assets/area1.jpeg" alt="area" id="second-img" />
+            <div>
+              <h2>LOCAL AREA</h2>
+              <p>We are situated approximately 2 miles outside of Longnor Village where you will find a selection of pubs for eating and drinking, a five star fish and chip shop, two coffee shops, a Post Office and a village store. All the delights of Buxton and Leek are both just ten minutes away! There are an abundance of walks from the doorstep or venture into Longnor as its a great base for a variety of walks.</p>  
+            </div>
+         </article>
+        </section>
+        <section id="map">
+          <iframe src="https://snazzymaps.com/embed/133057" style="border:none;"></iframe>
+        </section>
+        <section id="photos">
+          <h1>PHOTOS</h1>
+          <img src="./assets/bramble.png" alt="bramble" />
+          <ul>
+            <% for(i = 1; i < 9; i++) { %>
+            <li>
+              <img src="./assets/photo<%= i %>.jpg" alt="photo<%= i %>" class="photo" />
+            </li>
+            <% } %>
+          </ul>
+        </section>
+        <section id="contact">
+            <h1>CONTACT THE BRAMBLES</h1>
+            <img src="./assets/bramble.png" alt="bramble" />
+            <form action="/" id="contact-form" method="post" role="form">
+              <fieldset>
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required="required">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="text" placeholder="Your email" required="required">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Enter your message here" rows="3" required="required"></textarea>
+                <button type="submit">Submit</button>
+              </fieldset>
+              <% if(typeof msg !== 'undefined') { %>
+                  <h2><%=  msg %></h2> 
+              <% } %>
+            </form>
+            </section>
+    </main>
+    <footer>
+    <div>
+      <img src="./assets/instagram.png" alt="outside" id="logo" />
+      <img src="./assets/airbnb.png" alt="outside" id="logo" />
+    </div>
+    <img src="./assets/logo-blank.png" alt="outside" id="logo" />
+    <p>Legal Notice</p>
+    <p>Copyright</p>
+    </footer>
+  <script>
+  let navLogo = document.getElementById("logo");
+  let nav = document.getElementById("nav");
+  let btn = document.getElementById("menu-button");
+  let menuExpand = document.getElementById("menu-expand");
+
+  window.onscroll = function(e) {
+    if(window.scrollY) {
+        if(window.pageYOffset > 50) {
+          nav.classList.remove("nav-closed");
+          nav.classList.add("nav-open");
+        } else {
+          nav.classList.add("nav-closed");
+          nav.classList.remove("nav-open");
+          
+        }
+    }
+  }
+
+  btn.onclick = function() {
+    menuExpand.classList.toggle("open");
+    nav.classList.toggle("nav-closed")
+  }
+
+  </script>
+  </body>
+</html>
