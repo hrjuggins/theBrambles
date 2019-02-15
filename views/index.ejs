@@ -84,12 +84,12 @@
             <form action="/" id="contact-form" method="post" role="form">
               <fieldset>
                 <label for="name">Name</label>
-                <input id="name" name="name" type="text" placeholder="Your name" required="required">
+                <input id="name" name="name" type="text" required="required">
                 <label for="email">Email</label>
-                <input id="email" name="email" type="text" placeholder="Your email" required="required">
+                <input id="email" name="email" type="text" required="required">
                 <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Enter your message here" rows="3" required="required"></textarea>
-                <button type="submit">Submit</button>
+                <textarea id="message" name="message" rows="3" required="required"></textarea>
+                <button type="submit">SUBMIT</button>
               </fieldset>
               <% if(typeof msg !== 'undefined') { %>
                   <h2><%=  msg %></h2> 
