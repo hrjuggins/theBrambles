@@ -20,7 +20,7 @@
           <!---<a href="/book"><button id="nav-button">BOOK NOW</button></a>-->
           <div id="menu-button">
             <p>MENU</p>
-            <div id="nav-menu">
+            <div id="nav-menu" class="nav-menu-before">
               <div class="line"></div>
               <div class="line"></div>
               <div class="line"></div>
@@ -68,6 +68,7 @@
         </section>
         <section id="photos">
           <h1>PHOTOS</h1>
+          <div id="photo-enlarge"></div>
           <img src="./assets/bramble.png" alt="bramble" />
           <ul>
             <% for(i = 1; i < 9; i++) { %>
@@ -109,7 +110,11 @@
   let navLogo = document.getElementById("logo");
   let nav = document.getElementById("nav");
   let btn = document.getElementById("menu-button");
+  let menuBtn = document.getElementById("nav-menu")
   let menuExpand = document.getElementById("menu-expand");
+  let photo = document.getElementsByClassName("photo");
+  let photoEnlarge = document.getElementById("photo-enlarge");
+  let line = document.getElementsByClassName("line");
 
   window.onscroll = function(e) {
     if(window.scrollY) {
@@ -126,7 +131,21 @@
 
   btn.onclick = function() {
     menuExpand.classList.toggle("open");
-    nav.classList.toggle("nav-closed")
+    nav.classList.toggle("nav-color-after");
+    line[0].classList.toggle("line1");
+    line[1].classList.toggle("line2");
+    line[2].classList.toggle("line3");
+    menuBtn.classList.toggle("nav-menu-after");
+  }
+  function enlarge() {
+    this.classList.toggle("img-enlarge");
+    photoEnlarge.classList.toggle("photo-enlarge-open");
+  }
+  photoEnlarge.onclick = function() {
+    this.classList.toggle("photo-enlarge-open");
+  }
+  for(i = 0; i < photo.length; i++) {
+    photo[i].onclick = enlarge;
   }
 
   </script>

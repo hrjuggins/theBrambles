@@ -6,7 +6,6 @@
 .nav-closed {
   background-color: #dcdcdc00;
 }
-
 nav {
     overflow: hidden;
     position: fixed; /* Set the navbar to fixed position */
@@ -15,11 +14,11 @@ nav {
     width: 100%;
     z-index: 9;
     display: flex;
-  font-size: 15px;
-  background-color: #dcdcdc;
+    font-size: 15px;
+    background-color: #dcdcdc;
     justify-content: space-between;
     align-items: center;
-    transition: .5s linear;
+    transition: .3s linear;
     color: white;
     font-size: 15px;
     @media screen and (min-width: $big) {
@@ -88,7 +87,7 @@ nav {
         align-items: center;
         color: white;
         font-size: 15px;
-        background-color: $orange;
+        // background-color: $orange;
         opacity: 0.8;
         z-index: 10;
         @media screen and (min-width: $big) {
@@ -107,7 +106,6 @@ nav {
           width: 50%;
           display: flex;
           flex-direction: column;
-          justify-content: space-around;
           align-items: center;
           font-size: 15px;
           padding: 5px;
@@ -119,6 +117,7 @@ nav {
             height: 3px;
             width: 100%;
             background: white;
+            transition: .3s linear;
             @media screen and (min-width: $big) {
               height: 1px;
             }
@@ -126,7 +125,22 @@ nav {
         }
       }
     }
-    
-
 }
-  
+.line2 {
+  display: none;
+}
+.line1 {
+  transform: rotate(45deg);
+}
+.line3 {
+  transform: rotate(-45deg);
+}
+.nav-menu-before {
+  justify-content: space-around;
+}
+.nav-menu-after {
+  justify-content: center;
+}
+.nav-color-after {
+  background-color: #dcdcdc00;
+}

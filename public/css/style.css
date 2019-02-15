@@ -18,7 +18,7 @@ nav {
   background-color: #dcdcdc;
   justify-content: space-between;
   align-items: center;
-  transition: .5s linear;
+  transition: .3s linear;
   color: white;
   font-size: 15px; }
   @media screen and (min-width: 1100px) {
@@ -82,7 +82,6 @@ nav {
       align-items: center;
       color: white;
       font-size: 15px;
-      background-color: #d48b4a;
       opacity: 0.8;
       z-index: 10; }
       @media screen and (min-width: 1100px) {
@@ -100,7 +99,6 @@ nav {
         width: 50%;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
         align-items: center;
         font-size: 15px;
         padding: 5px; }
@@ -111,10 +109,29 @@ nav {
         nav #nav-right #menu-button #nav-menu .line {
           height: 3px;
           width: 100%;
-          background: white; }
+          background: white;
+          transition: .3s linear; }
           @media screen and (min-width: 1100px) {
             nav #nav-right #menu-button #nav-menu .line {
               height: 1px; } }
+
+.line2 {
+  display: none; }
+
+.line1 {
+  transform: rotate(45deg); }
+
+.line3 {
+  transform: rotate(-45deg); }
+
+.nav-menu-before {
+  justify-content: space-around; }
+
+.nav-menu-after {
+  justify-content: center; }
+
+.nav-color-after {
+  background-color: #dcdcdc00; }
 
 #splash {
   width: 100vw;
@@ -292,7 +309,7 @@ section {
   justify-content: center;
   margin-bottom: 45px; }
   #map iframe {
-    width: 80%;
+    width: 100%;
     height: 35vh; }
     @media screen and (min-width: 1100px) {
       #map iframe {
@@ -322,16 +339,38 @@ section {
     justify-content: center; }
     @media screen and (min-width: 1100px) {
       #photos ul {
-        width: 80%; } }
+        width: 95%; } }
     #photos ul li {
-      width: 30%;
+      width: 25%;
       list-style: none;
       margin: 15px; }
       @media screen and (min-width: 1100px) {
         #photos ul li {
-          width: 45%; } }
+          width: 25%; } }
       #photos ul li img {
-        width: 100%; }
+        width: 100%;
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1); }
+
+.img-enlarge {
+  width: 100%;
+  z-index: 99;
+  position: fixed;
+  top: 25%;
+  left: 0; }
+
+#photo-enlarge {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 98;
+  background: black;
+  opacity: 0.8; }
+
+.photo-enlarge-closed {
+  position: fixed; }
+
+.photo-enlarge-open {
+  position: fixed; }
 
 #contact {
   display: flex;
