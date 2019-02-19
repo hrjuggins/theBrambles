@@ -1,0 +1,34 @@
+@import 'colours';
+
+#room-background {
+    background-image: url(/assets/photo8.jpg);
+    width: 100%;
+    height: 75vh;
+    position: absolute;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: grey;
+    opacity: 0.85;
+}
+
+#header {
+    z-index: 2;
+    color: white;
+    text-align: center;
+    h1 {
+        font-size: 4.5em;
+        font-family: 'Merriweather';
+        margin: 0;
+        @media screen and (min-width: $big) {
+            font-size: 2em;
+        }
+    }
+    h2 {
+        font-size: 2.5em;
+        margin: 0;
+        @media screen and (min-width: $big) {
+            font-size: 1.5em;
+        } 
+    }
+}

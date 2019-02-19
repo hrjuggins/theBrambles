@@ -1,13 +1,13 @@
 #splash {
   width: 100vw;
-  height: 100vh;
+  height: 75vh;
   display: flex;
   justify-content: center;
   align-items: center; }
   #splash #splash-background {
     background-image: url(/assets/outside2.jpg);
     width: 100%;
-    height: 100vh;
+    height: 75vh;
     position: absolute;
     z-index: 1;
     background-blend-mode: darken;
@@ -37,22 +37,22 @@
   0% {
     width: 0;
     height: 0;
-    border-top-color: orange;
+    border-top-color: #d48b4a;
     border-right-color: transparent;
     border-bottom-color: transparent;
     border-left-color: transparent; }
   50% {
     width: 100%;
     height: 0;
-    border-top-color: orange;
+    border-top-color: #d48b4a;
     border-right-color: transparent;
     border-bottom-color: transparent;
     border-left-color: transparent; }
   100% {
     width: 100%;
     height: 100%;
-    border-top-color: orange;
-    border-right-color: orange;
+    border-top-color: #d48b4a;
+    border-right-color: #d48b4a;
     border-bottom-color: transparent;
     border-left-color: transparent; } }
   #splash .animatedBorder:after {
@@ -74,21 +74,21 @@
     border-top-color: transparent;
     border-right-color: transparent;
     border-bottom-color: transparent;
-    border-left-color: orange; }
+    border-left-color: #d48b4a; }
   50% {
     width: 0;
     height: 100%;
     border-top-color: transparent;
     border-right-color: transparent;
-    border-bottom-color: orange;
-    border-left-color: orange; }
+    border-bottom-color: #d48b4a;
+    border-left-color: #d48b4a; }
   100% {
     width: 100%;
     height: 100%;
     border-top-color: transparent;
     border-right-color: transparent;
-    border-bottom-color: orange;
-    border-left-color: orange; } }
+    border-bottom-color: #d48b4a;
+    border-left-color: #d48b4a; } }
   #splash img {
     z-index: 2;
     position: relative; }

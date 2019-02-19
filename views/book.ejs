@@ -11,10 +11,50 @@
       <div id="background"></div>
       <section id="book-inner">
         <h1>THE BRAMBLES</h1>
-        <h2></h2>
+        <h2>Check Availability</h2>
+        <form action="/book" id="check" method="POST">
+          <label for="start">Start date:</label>
+          <input type="date" id="start" name="trip-start"
+                 value=""
+                 min="" max="">
+          <label for="start">End date:</label>
+          <input type="date" id="end" name="trip-end"
+                value=""
+                min="" max="">         
+          <button type="submit">SUBMIT</button>
+        </form>
+        <% if(typeof query !== 'undefined') { %>
+          <h2><%=  query %></h2> 
+        <% } %>
+
+      <h2 id="start-form"></h2>
+      <h2 id="end-form"></h2>
       </section>
   </main>
   <script>
+    let today = new Date()
+    let tomorrow = new Date()
+    tomorrow.setDate(today.getDate() + 1)
+    document.getElementById('start').valueAsDate = today;
+    document.getElementById('end').valueAsDate = tomorrow;
+
+    let start = document.getElementById('start')
+    let end = document.getElementById('end')
+
+    let startForm = document.getElementById('start-form')
+    let endForm = document.getElementById('end-form')
+
+    start.addEventListener('input', handleChange)
+    end.addEventListener('input', handleChange)
+
+    function handleChange(e) {
+      if (e.target.id === 'start') {
+        startForm.innerHTML = e.target.value
+      } else {
+        endForm.innerHTML = e.target.value
+      }
+    }
+
   </script>
   </body>
 </html>

@@ -7,51 +7,27 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300|Merriweather' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <nav id="nav" class="nav-closed">
-      <div id="nav-left">
-        <h2></h2>
-        <h3>ROOM</h3>
-        <h3>AREA</h3>
-      </div>
-      <div id="img-container"><img src="./assets/logo-blank-white.png" alt="outside" id="logo" /></div>
-      <div id="nav-right">
-      <h3>PHOTOS</h3>
-      <h3>CONTACT</h3>
-          <!---<a href="/book"><button id="nav-button">BOOK NOW</button></a>-->
-          <div id="menu-button">
-            <p>MENU</p>
-            <div id="nav-menu" class="nav-menu-before">
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-            </div>
-        </div>
-      </div>
-    </nav>
+    <%- include('nav') %>
     <main id="main-page">
-      <div id="menu-expand" class="closed">
-        <div>
-          <h2>The Room</h2>
-          <h2>The Area</h2>
-          <h2>Photos</h2>
-          <h2>Contact</h2>
-        </div>
-      </div>
+      <%- include('menu-expand') %>
       <div id="background"></div>
+      <!-- <a href="/book" id="query"><h1>Check Availability</h1></a> -->
         <section id="splash" >
           <div id="splash-background"></div>
           <div class="animatedBorder" ><img src="./assets/logo-no-border.png" alt="outside" /></div>
         </section>
         <section id="intro">
+          <div>
           <h1>WELCOME TO THE BRAMBLES</h1>
           <img src="./assets/bramble.png" alt="bramble" />
           <p>The Brambles is a cozy Self contained accommodation in a quiet secluded location deep in the heart of the Peak District. </p>
+          </div>
         </section>
         <section id="info">
           <article>
             <img src="./assets/inside1.jpg" alt="inside" />
             <div>
-              <h2>THE SPACE</h2>
+              <h2>THE PROPERTY</h2>
               <p>Although The Brambles is an extension of our property you will have your own access to come and go as you please. The key is accessed via a safebox. There is ample parking for guests. You will have the added bonus of a kitchenette with a fridge, microwave, toaster, kettle and washing machine. A bright airy modern en-suite shower and toilet. All bedding and towels provided. The bedroom can be made up as a double or twin room.</p>  
             </div>
           </article>
@@ -69,7 +45,7 @@
         <section id="photos">
           <h1>PHOTOS</h1>
           <div id="photo-enlarge"></div>
-          <img src="./assets/bramble.png" alt="bramble" />
+          <img src="./assets/bramble.png" alt="bramble" width="125px"/>
           <ul>
             <% for(i = 1; i < 9; i++) { %>
             <li>
@@ -95,7 +71,7 @@
                   <h2><%=  msg %></h2> 
               <% } %>
             </form>
-            </section>
+          </section>
     </main>
     <footer>
     <div>
@@ -139,9 +115,14 @@
   }
   function enlarge() {
     this.classList.toggle("img-enlarge");
+    this.classList.toggle("photo");
     photoEnlarge.classList.toggle("photo-enlarge-open");
   }
+
+  let openImg = document.getElementsByClassName("img-enlarge");
   photoEnlarge.onclick = function() {
+    openImg[0].style.width = "100%";
+    openImg[0].classList.remove("img-enlarge");
     this.classList.toggle("photo-enlarge-open");
   }
   for(i = 0; i < photo.length; i++) {

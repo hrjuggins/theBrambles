@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Brambles</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300|Merriweather' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <%- include('nav') %>
+    <main id="main-page">
+      <%- include('menu-expand') %>
+      <div id="background"></div>
+        <section id="splash" >
+          <div id="area-background"></div>
+          <div id="header">
+            <h1>THE AREA</h1>
+            <h2>In the heart of the peak district</h2>
+          </div>
+        </section>
+        <section id="intro">
+          
+        </section>
+    </main>
+    <footer>
+    <div>
+      <img src="./assets/instagram.png" alt="outside" id="logo" />
+      <img src="./assets/airbnb.png" alt="outside" id="logo" />
+    </div>
+    <img src="./assets/logo-blank.png" alt="outside" id="logo" />
+    <p>Legal Notice</p>
+    <p>Copyright</p>
+    </footer>
+  <script>
+  let navLogo = document.getElementById("logo");
+  let nav = document.getElementById("nav");
+  let btn = document.getElementById("menu-button");
+  let menuBtn = document.getElementById("nav-menu")
+  let menuExpand = document.getElementById("menu-expand");
+  let photo = document.getElementsByClassName("photo");
+  let photoEnlarge = document.getElementById("photo-enlarge");
+  let line = document.getElementsByClassName("line");
+
+  window.onscroll = function(e) {
+    if(window.scrollY) {
+        if(window.pageYOffset > 50) {
+          nav.classList.remove("nav-closed");
+          nav.classList.add("nav-open");
+        } else {
+          nav.classList.add("nav-closed");
+          nav.classList.remove("nav-open");
+          
+        }
+    }
+  }
+
+  btn.onclick = function() {
+    menuExpand.classList.toggle("open");
+    nav.classList.toggle("nav-color-after");
+    line[0].classList.toggle("line1");
+    line[1].classList.toggle("line2");
+    line[2].classList.toggle("line3");
+    menuBtn.classList.toggle("nav-menu-after");
+  }
+  function enlarge() {
+    this.classList.toggle("img-enlarge");
+    photoEnlarge.classList.toggle("photo-enlarge-open");
+  }
+
+  let openImg = document.getElementsByClassName("img-enlarge");
+  photoEnlarge.onclick = function() {
+    openImg[0].classList.remove("img-enlarge");
+    this.classList.toggle("photo-enlarge-open");
+  }
+  for(i = 0; i < photo.length; i++) {
+    photo[i].onclick = enlarge;
+  }
+
+  </script>
+  </body>
+</html>

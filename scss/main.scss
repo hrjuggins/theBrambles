@@ -38,24 +38,38 @@ section {
   z-index: -3;
 }
 
+#query {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 150px;
+  width: 300px;
+  background: red;
+  color: white;
+  z-index: 15;
+}
+
 #intro {
-    display: flex;
-    flex-direction: column;
-    color: $text-dark;
-    padding: 15px;
-    padding-bottom: 45px;
-    margin-bottom: -1px;
-    h1 {
-      font-size: 2em;
-      margin-bottom: 0px;
+    div {
       text-align: center;
-      position: relative;
-      font-family: 'Merriweather';
-    }
-    img {
-      width: 125px;
-      margin: auto;
-      margin-bottom: 25px;
+      color: $text-dark;
+      padding: 25px;
+      margin-bottom: -1px;
+      h1 {
+        margin-bottom: 0px;
+        text-align: center;
+        position: relative;
+        font-family: 'Merriweather';
+      }
+      img {
+        width: 125px;
+        margin: auto;
+        margin-bottom: 25px;
+      }
+      p {
+        text-align: start;
+        padding: 25px;
+      }
     }
 }
 
@@ -72,6 +86,7 @@ section {
       height: 30vh;
       @media screen and (min-width: $big) {
         width: 50%;
+        height: 45vh;
       }
     }
     #second-img {
@@ -81,8 +96,6 @@ section {
     }
     div {
       padding: 25px;
-      p {
-      }
     }
   }
 }
@@ -98,26 +111,21 @@ section {
     height: 35vh;
     @media screen and (min-width: $big) {
       width: 60%;
-      height: 35vh;
+      height: 45vh;
     }
   }
 }
 
 #photos {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
   margin-bottom: 45px;
   h1 {
-    font-size: 2em;
     margin-bottom: 0px;
     text-align: center;
     position: relative;
     font-family: 'Merriweather';
   }
-  img {
-    width: 125px;
+  img:first-child {
     margin-bottom: 25px;
   }
   ul {
@@ -137,7 +145,6 @@ section {
         width: 20%;
       }
       img {
-        width: 100%;
         transition: cubic-bezier(0.075, 0.82, 0.165, 1)
       }
     }
@@ -149,6 +156,11 @@ section {
   position: fixed;
   top: 25%;
   left: 0;
+  @media screen and (min-width: $big) {
+    width: 65%;
+    top: 15%;
+    left: 17.5%;
+  }
 }
 #photo-enlarge {
   top: 0;
@@ -157,19 +169,18 @@ section {
   z-index: 98;
   background: black;
   opacity: 0.9;
-  pointer-events: none;
 }
 .photo-enlarge-open {
   position: fixed;
 }
+.photo {
+  width: 100%;
+}
 
 #contact {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
   margin-bottom: 45px;
   h1 {
-    font-size: 2em;
     margin-bottom: 0px;
     text-align: center;
     position: relative;
@@ -180,12 +191,16 @@ section {
     margin-bottom: 25px;
   }
   fieldset {
+    margin: auto;
     width: 85vw;
     display: flex;
     border: none;
-    font-size: 1.5em;
     padding-bottom: 50px;
+    @media screen and (min-width: $big) {
+      width: 50vw;
+    }
     label {
+      font-size: 2.5rem;
       margin-top: 10px;
       margin-bottom: 15px;
     }
@@ -193,28 +208,34 @@ section {
       width: 100%;
       height: 300px;
       border: none;
+      @media screen and (min-width: $big) {
+        height: 200px;
+      }
     }
     input {
       height: 75px;
       width: 85vw;
       border: none;
-      font-size: 1em;
       font-family: 'Open Sans';
       text-indent: 15px;
+      @media screen and (min-width: $big) {
+        width: 50vw;
+        height: 50px;
+      }
     }
     textarea {
       margin-bottom: 50px;
-      font-size: 1em;
       font-family: 'Open Sans';
       text-indent: 15px;
     }
     button {
       border: 2px solid $orange;
-      background-color: #d48b4ac2;
-      color: white;
-      font-size: 1em;
-      padding: 10px;
+      border-radius: 5px;
+      color: $orange;
+      background-color: white;
+      padding: 15px 25px 15px 25px;
       margin: auto;
+      font-size: 16px;
     }
   }
 }
@@ -229,8 +250,8 @@ footer {
   width: 30%;
   margin: auto;
   div img {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     margin-left: 5px;
     margin-right: 5px;
   }
