@@ -2,7 +2,6 @@ const nodemailer = require('nodemailer')
 const bodyParser = require('body-parser')
 const dotenv = require('dotenv')
 const express = require('express')
-const request = require('request')
 const app = express()
 
 const fs = require('fs')
